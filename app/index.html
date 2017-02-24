@@ -30,15 +30,27 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Modernizr</li>
-        <li>jQuery</li>
-      </ul>
-    </div>
+    <!-- navigation fixed on top -->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#section1" class="brand-logo"><img src="images/mdwhite.svg" alt="mahadafterdar" height="60" id="mylogo"></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons" id="fixside">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#section2">About</a></li>
+            <li><a href="#section3">Language Skills</a></li>
+            <li><a href="#section4">Portfolio</a></li>
+            <li><a href="#section5">Contact Me</a></li>
+          </ul>
+          <ul id="mobile-demo" class="side-nav">
+            <li><a href="#section2">About</a></li>
+            <li><a href="#section3">Language Skills</a></li>
+            <li><a href="#section4">Portfolio</a></li>
+            <li><a href="#section5">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div> 
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -64,5 +76,18 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+
+    <!-- extra scripts/ jQuery -->
+    <script>
+      // jQuery for the scrolling page 
+      $(document).ready(function() {
+        //navigation
+        $('.button-collapse').sideNav({
+          closeOnClick: true
+        });
+
+      });
+      // end of jQuery for the scrolling page
+    </script>
   </body>
 </html>
