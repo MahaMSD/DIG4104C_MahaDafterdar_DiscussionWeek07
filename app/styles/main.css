@@ -61,6 +61,10 @@ body{
     z-index: -3;
 }
 
+/*#section02 {
+  height: 200px;
+}*/
+
 .section h1 {
   padding-top: 200px;
   font-weight: bold;
@@ -106,6 +110,11 @@ body{
 .section p#firsthome {
     margin-top: 20px;
     margin-bottom: 200px;
+}
+
+.section p.aboutskill {
+    text-indent: 2em;
+    padding-bottom: 5px;
 }
 
 .section div#centerd3 {
