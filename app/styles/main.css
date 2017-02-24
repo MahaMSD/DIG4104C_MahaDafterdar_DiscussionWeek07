@@ -44,3 +44,216 @@ nav ul.side-nav li a:hover {
   color: #ffffff;
   font-weight: bold;
 }
+
+/* --------- style for the scrolling page --------- */
+/* vertical scroll */
+body{
+    background:#000000;
+    font-family: Helvetica;
+}
+
+/* vertical */
+.section{
+    margin:0px;
+    height:1000px;
+    width:100%;
+    float:left;
+    z-index: -3;
+}
+
+.section h1 {
+  padding-top: 200px;
+  font-weight: bold;
+  font-size: 60px;
+  margin: 0px;
+  color: #ef233c;
+  text-align: center;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section hr {
+  color: #2d2d34;
+  width: 60%;
+  margin: auto;
+}
+
+.section h2#homeh2 {
+  font-weight: normal;
+  font-size: 35px;
+  color: #edf2f4;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.section h2 {
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 34px;
+    margin: 50px 0px 30px 50px;
+    color: #ef233c;
+    text-align: center;
+}
+
+.section p {
+    font-size: 26px;
+    line-height: 33px;
+    color: #2d2d34;
+}
+
+.section p#firsthome {
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+
+.section div#centerd3 {
+    margin: 20px 0px 0px 50px;
+    width: 600px;
+}
+
+.home {
+  color: #ffffff;
+  background-image: url(../images/homeimg03.jpg);
+  background-repeat: none;
+  background-size: cover;
+  margin-top: -75px;
+  height: 750px;
+  z-index: -1;
+}
+
+.contact {
+  color: #ffffff;
+  background-image: url(../images/contact0103.jpg);
+  background-repeat: none;
+  background-size: cover;
+  height: 700px;
+  z-index: -1;
+}
+
+.contact h2 {
+  /*background-color: rgba(250, 250, 250, 0.5);*/
+  color: #ffffff;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.whitesec {
+    color: #ffffff;
+    background-color: #edf2f4;
+}
+
+.goldsec {
+    color:#000000;
+    background-color: #a89b9d;
+    /*background-color: #ffffff;*/
+}
+
+/*nav ul li a .whitesec {
+  color: black;
+  border: 3px solid red;
+}
+*/
+/*.goldsec h2 {
+  color: #edf2f4;
+}*/
+
+/* ----------- end of style for the scrolling ------------- */
+/* ----------- typing effect and text --------------------- */
+.container {
+  max-width: 90%;
+  z-index: 1;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.textContainer {
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.15vw;
+  line-height: 1.05;
+  min-height: 88vh;
+}
+
+.jstext {
+  width: 100%;
+  padding-top: 0px;
+  padding-right: 50px;
+}
+.jstext:after {
+  content: "_";
+  animation: sliding 2s 0.3s 1 forwards, blinking 2s 2s infinite forwards;
+  position: absolute;
+  transform: translate(10%, -10%);
+  overflow: hidden;
+  width: 0px;
+}
+
+.text {
+  color: #46200A;
+}
+
+#brName {
+  display: none;
+}
+
+@keyframes sliding {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100px;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* -------------------------------
+     MEDIA QUERIES 
+----------------------------------*/
+@media all and (max-width: 1024px) {
+  .textContainer {
+    min-height: 75vh;
+  }
+}
+@media all and (max-width: 768px) {
+  #brName {
+    display: block;
+  }
+
+  .textContainer {
+    min-height: 80vh;
+    font-size: 40px;
+  }
+
+  .jstext {
+    padding-right: 0px;
+  }
+}
+@media all and (max-width: 468px) {
+  .textContainer {
+    min-height: 80vh;
+    font-size: 30px;
+  }
+
+  .jstext {
+    padding-right: 0px;
+  }
+}
+
+
+/* ----------- end of typing effect ----------------------- */
