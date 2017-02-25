@@ -90,7 +90,7 @@
     <!-- skills -->
     <div class="section goldsec" id="section3">
       <div class="row">
-        <div class="col s12 m10 l8 offset-l2 offset-m1">
+        <div class="col s12 m8 l8 offset-l3">
           <h2 class="goldh2">Language Skills</h2>
           <div id="centerd3">
           <!-- <div class="row">
@@ -117,46 +117,46 @@
           <!-- </div> -->
           <!-- testing option 3 -->
 	        <div class="row">
-	          	<div class="col s12 m10 l3  offset-m1">
+	          	<div class="col s11 m3 l3  offset-m1 offset-s1">
 	          	<!-- <figure> -->
-	          		<svg id="fillgauge1" width="100%" height="200" onclick="gauge1.update(NewValue());"></svg>
+	          		<svg id="fillgauge1" width="90%" height="200" onclick="gauge1.update(NewValue());"></svg>
 	          		<h5>HTML</h5>
 	          		<!-- <figcaption>HTML</figcaption>
 	          	</figure> -->
 	          	</div>
-	          	<div class="col s12 m10 l3 offset-l1 offset-m1">
+	          	<div class="col s11 m3 l3 offset-l1 offset-m1 offset-s1">
 	          	<!-- <figure> -->
-					<svg id="fillgauge2" width="100%" height="200" onclick="gauge2.update(NewValue());"></svg>
+					<svg id="fillgauge2" width="90%" height="200" onclick="gauge2.update(NewValue());"></svg>
 					<h5>CSS</h5>
 					<!-- <figcaption>CSS</figcaption>
 				</figure> -->
 				</div>
-				<div class="col s12 m10 l3 offset-l1 offset-m1">
+				<div class="col s11 m3 l3 offset-l1 offset-m1 offset-s1">
 				<!-- <figure> -->
-					<svg id="fillgauge3" width="100%" height="200" onclick="gauge3.update(NewValue());"></svg>
+					<svg id="fillgauge3" width="90%" height="200" onclick="gauge3.update(NewValue());"></svg>
 					<h5>JavaScript/jQuery</h5>
 					<!-- <figcaption>JavaScript/jQuery</figcaption>
 				</figure> -->
 				</div>
 			</div>
 			<div class="row">
-				<div class="col s12 m10 l3  offset-m1">
+				<div class="col s11 m3 l3  offset-m1 offset-s1">
 				<!-- <figure> -->
-					<svg id="fillgauge4" width="100%" height="200" onclick="gauge4.update(NewValue());"></svg>
+					<svg id="fillgauge4" width="90%" height="200" onclick="gauge4.update(NewValue());"></svg>
 					<h5>D3.js</h5>
 					<!-- <figcaption>D3.js</figcaption>
 				</figure> -->
 				</div>
-				<div class="col s12 m10 l3 offset-l1 offset-m1">
+				<div class="col s11 m3 l3 offset-l1 offset-m1 offset-s1">
 				<!-- <figure> -->
-					<svg id="fillgauge5" width="100%" height="200" onclick="gauge5.update(NewValue());"></svg>
+					<svg id="fillgauge5" width="90%" height="200" onclick="gauge5.update(NewValue());"></svg>
 					<h5>PHP</h5>
 					<!-- <figcaption>PHP</figcaption>
 				</figure> -->
 				</div>
-				<div class="col s12 m10 l3 offset-l1 offset-m1">
+				<div class="col s11 m3 l3 offset-l1 offset-m1 offset-s1">
 				<!-- <figure> -->
-					<svg id="fillgauge6" width="100%" height="200" onclick="gauge6.update(NewValue());"></svg>
+					<svg id="fillgauge6" width="90%" height="200" onclick="gauge6.update(NewValue());"></svg>
 					<h5>MySQL</h5>
 					<!-- <figcaption>MySQL</figcaption>
 				</figure> -->
@@ -249,70 +249,66 @@
       // end of jQuery for the scrolling page
 
       //javascript for the d3 ::
-       var gauge1 = loadLiquidFillGauge("fillgauge1", 75);
+      	var config6 = liquidFillGaugeDefaultSettings();
+      	//red
+	    config6.circleColor = "#e53935";
+	    config6.textColor = "#f44336";
+	    config6.waveTextColor = "#f44336";
+	    config6.waveColor = "#e57373";
+	    config6.circleThickness = 0.2;
+	    config6.textVertPosition = 0.2;
+	    config6.waveAnimateTime = 1000;
+       	var gauge1 = loadLiquidFillGauge("fillgauge1", 99, config6);
 	    var config1 = liquidFillGaugeDefaultSettings();
-	    config1.circleColor = "#FF7777";
-	    config1.textColor = "#FF4444";
-	    config1.waveTextColor = "#FFAAAA";
-	    config1.waveColor = "#FFDDDD";
+	    //pink
+	    config1.circleColor = "#E91E63";
+	    config1.textColor = "#EC407A";
+	    config1.waveTextColor = "#EC407A";
+	    config1.waveColor = "#F06292";
 	    config1.circleThickness = 0.2;
 	    config1.textVertPosition = 0.2;
 	    config1.waveAnimateTime = 1000;
-	    var gauge2= loadLiquidFillGauge("fillgauge2", 58, config1);
+	    var gauge2= loadLiquidFillGauge("fillgauge2", 99, config1);
 	    var config2 = liquidFillGaugeDefaultSettings();
-	    config2.circleColor = "#D4AB6A";
-	    config2.textColor = "#553300";
-	    config2.waveTextColor = "#805615";
-	    config2.waveColor = "#AA7D39";
-	    config2.circleThickness = 0.1;
-	    config2.circleFillGap = 0.2;
-	    config2.textVertPosition = 0.8;
-	    config2.waveAnimateTime = 2000;
-	    config2.waveHeight = 0.3;
-	    config2.waveCount = 1;
-	    var gauge3 = loadLiquidFillGauge("fillgauge3", 60.1, config2);
+	    //purple
+	    config2.circleColor = "#9C27B0";
+	    config2.textColor = "#AB47BC";
+	    config2.waveTextColor = "#AB47BC";
+	    config2.waveColor = "#BA68C8";
+	    config2.circleThickness = 0.2;
+	    config2.textVertPosition = 0.2;
+	    config2.waveAnimateTime = 1000;
+	    var gauge3 = loadLiquidFillGauge("fillgauge3", 85, config2);
 	    var config3 = liquidFillGaugeDefaultSettings();
-	    config3.textVertPosition = 0.8;
-	    config3.waveAnimateTime = 5000;
-	    config3.waveHeight = 0.15;
-	    config3.waveAnimate = false;
-	    config3.waveOffset = 0.25;
-	    config3.valueCountUp = false;
-	    config3.displayPercent = false;
-	    var gauge4 = loadLiquidFillGauge("fillgauge4", 50, config3);
+	    //blue
+	    config3.circleColor = "#03A9F4";
+	    config3.textColor = "#29B6F6";
+	    config3.waveTextColor = "#29B6F6";
+	    config3.waveColor = "#4FC3F7";
+	    config3.circleThickness = 0.2;
+	    config3.textVertPosition = 0.2;
+	    config3.waveAnimateTime = 1000;
+	    var gauge4 = loadLiquidFillGauge("fillgauge4", 35, config3);
 	    var config4 = liquidFillGaugeDefaultSettings();
-	    config4.circleThickness = 0.15;
-	    config4.circleColor = "#808015";
-	    config4.textColor = "#555500";
-	    config4.waveTextColor = "#FFFFAA";
-	    config4.waveColor = "#AAAA39";
-	    config4.textVertPosition = 0.8;
+	    //green
+	    config4.circleColor = "#43A047";
+	    config4.textColor = "#66BB6A";
+	    config4.waveTextColor = "#66BB6A";
+	    config4.waveColor = "#AED581";
+	    config4.circleThickness = 0.2;
+	    config4.textVertPosition = 0.2;
 	    config4.waveAnimateTime = 1000;
-	    config4.waveHeight = 0.05;
-	    config4.waveAnimate = true;
-	    config4.waveRise = false;
-	    config4.waveHeightScaling = false;
-	    config4.waveOffset = 0.25;
-	    config4.textSize = 0.75;
-	    config4.waveCount = 3;
-	    var gauge5 = loadLiquidFillGauge("fillgauge5", 60.44, config4);
+	    var gauge5 = loadLiquidFillGauge("fillgauge5", 60, config4);
 	    var config5 = liquidFillGaugeDefaultSettings();
-	    config5.circleThickness = 0.4;
-	    config5.circleColor = "#6DA398";
-	    config5.textColor = "#0E5144";
-	    config5.waveTextColor = "#6DA398";
-	    config5.waveColor = "#246D5F";
-	    config5.textVertPosition = 0.52;
-	    config5.waveAnimateTime = 5000;
-	    config5.waveHeight = 0;
-	    config5.waveAnimate = false;
-	    config5.waveCount = 2;
-	    config5.waveOffset = 0.25;
-	    config5.textSize = 1.2;
-	    config5.minValue = 30;
-	    config5.maxValue = 150
-	    config5.displayPercent = false;
-	    var gauge6 = loadLiquidFillGauge("fillgauge6", 120, config5);
+	    //oragne
+	    config5.circleColor = "#FB8C00";
+	    config5.textColor = "#FF9800";
+	    config5.waveTextColor = "#FF9800";
+	    config5.waveColor = "#FFB74D";
+	    config5.circleThickness = 0.2;
+	    config5.textVertPosition = 0.2;
+	    config5.waveAnimateTime = 1000;
+	    var gauge6 = loadLiquidFillGauge("fillgauge6", 65, config5);
 
 	    function NewValue(){
 	        if(Math.random() > .5){
