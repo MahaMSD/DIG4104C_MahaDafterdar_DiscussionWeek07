@@ -568,3 +568,42 @@ img.portfolioimg {
 
 
 /* ----------- end of expanding effect --------------------------- */
+/* ----------- contact section ----------------------------------- */
+div#contactsection {
+  border: 1px solid #eeeeee;
+  padding: 70px 2px;
+  background-color: rgba(250, 250, 250, 0.8);
+}
+
+/*div#contactsection form i {
+  color: #ffffff;
+}
+
+div#contactsection form label {
+  color: #555555;
+}
+
+div#contactsection form button {
+  background-color: #ef233c;
+}*/
+
+div#contactsection h4 {
+  color: #ef233c;
+  border-right: 1px solid #555555;
+  padding-right: 30px;
+  font-size: 30px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 40px;
+}
+
+div#contactsection p {
+  font-size: 24px;
+  line-height: 50px;
+  color: #02020a;
+}
+
+
+
+/* ----------- end of contact section ---------------------------- */
