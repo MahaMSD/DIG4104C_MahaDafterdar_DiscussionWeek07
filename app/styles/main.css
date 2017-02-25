@@ -92,6 +92,10 @@ body{
   padding-top: 10px;
 }
 
+/*.section h2.goldh2 {
+  color: #edf2f4;
+}
+*/
 .section h2 {
     padding-top: 30px;
     font-weight: bold;
@@ -148,12 +152,24 @@ body{
   padding-left: 0px;
 }
 
+.whitesecabout {
+    color: #ffffff;
+    background-color: #edf2f4;
+    height: 650px;
+}
+
 .whitesec {
     color: #ffffff;
     background-color: #edf2f4;
 }
 
 .goldsec {
+    color:#000000;
+    background-color: #a89b9d;
+    /*background-color: #ffffff;*/
+}
+
+.goldsecskill {
     color:#000000;
     background-color: #a89b9d;
     /*background-color: #ffffff;*/
@@ -167,6 +183,77 @@ body{
 /*.goldsec h2 {
   color: #edf2f4;
 }*/
+
+/* media queries for fixing the hieght */
+/*@media all and (max-width: 1024px) {
+  
+}*/
+
+@media all and (max-width: 768px) {
+  .section.home {
+    height:750px;
+    width:100%;
+    z-index: -3;
+  }
+
+  .section.whitesecabout {
+    height:550px;
+    width:100%;
+    z-index: -3;
+  }
+
+  .section.goldsecskill{
+    height: 750px;
+    width:100%;
+    z-index: -3;
+  }
+
+  .section.whitesec {
+    height:1300px;
+    width:100%;
+    z-index: -3;
+  }
+
+  .section.contact {
+    height:600px;
+    width:100%;
+    z-index: -3;
+  }
+}
+
+@media all and (max-width: 468px) {
+  .section.home {
+    height:650px;
+    width:100%;
+    z-index: -3;
+  }
+
+  .section.whitesecabout {
+    height:750px;
+    width:100%;
+    z-index: -3;
+  }
+
+  .section.goldsecskill {
+    height:1550px;
+    width:100%;
+    z-index: -3;
+  }
+
+  .section.whitesec {
+    height:1850px;
+    width:100%;
+    z-index: -3;
+  }
+
+  .section.contact {
+    height:650px;
+    width:100%;
+    z-index: -3;
+  }
+
+}
+
 
 /* ----------- end of style for the scrolling ------------- */
 /* ----------- typing effect and text --------------------- */
@@ -267,161 +354,57 @@ body{
 
 /* ----------- end of typing effect ----------------------- */
 /* ----------- style for the d3 animated chart ------------ */
-/*label {
-  color: #000000;
-}
-
-.t2 { 
-    font-size: 150%; 
-}*/
-
-/*float*/
-/*.fl { 
-    float: left; 
-}
-
-.fr { 
-    float: right; 
-}
-
-.fn { 
-    float: none; 
-}
-
-.title { 
-    padding-left: 260px;
-}
-
-.y-axis path {
-  fill: none;
-  stroke: none;
-}
-
-.y-axis line, .string,
-.x-axis path, .x-axis line {
-  fill: none;
-  stroke: #a1a1a1;
-  shape-rendering: crispEdges;
-}
-
-.xLabel, .value { 
-    text-anchor: middle; 
-}
-
-.y-unit {
-  alignment-baseline: middle;
-}
-
-.y-unit-right {
-  text-anchor: end;
-}
-
-.wide-tick line {
-  stroke-width: 7px;
-}
-
-.numb, .y-axis text, .x-axis text {
-  pointer-events: none;
-}
-
-.brush .extent {
-  stroke: #FFF;
-  shape-rendering: crispEdges;
-  fill: #E6E7E8;
-  opacity: 1.0;
-}
-
-.clickable {
-  cursor: hand;
-}
-
-.d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #ffffff;
-  border-radius: 6px;
-}
-
-text { 
-    font-size: 12px; 
-}
-
-.ctext { 
-    text-align: "middle";
-}
-
-.hide { 
-    display: none; 
-}
-
-.dbg-vis-border {
-  border: #797979 solid 1px;
-}
-
-.dbg-svg-green {
-  fill: #00ff00;
-}
-
-.bold {
-  font-weight: bold;
-}
-*/
-/* layout stuff */
-/*.mt1 {
-  margin-top: 25px;
-}
-
-.pt1 {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.pr2 {
-  padding-right: 30px;
-}
-
-.ml2 {
-  margin-left: 40px;
-}*/
-
-
-/* option 2 */
-/*#chart-container {
-  padding: 20px;
-}
-
-.horizontal-bar {
-  fill: #2d2d34;
-}*/
-
-
 /* option 03 */
 .liquidFillGaugeText { 
   font-family: Helvetica; 
   font-weight: bold; 
 }
 
+h5 {
+  font-size: 20px;
+  text-align: center;
+  color: #edf2f4;
+}
+
+/* media queries for fixing the hieght */
+@media all and (max-width: 768px) {
+
+}
+
+@media all and (max-width: 468px) {
+  h5 {
+    text-align: left;
+    padding-left: 30px;
+    margin-top: -10px;
+  }
+}
+
 /* ----------- end of style for the animated d3 chart ------------ */
 /* ----------- for expanding the portfolio images ---------------- */
+p#fixportfolio {
+  text-align: center;
+}
+
 .expanding-grid {
   position: relative;
   width: 100%;
 }
 .expanding-grid .links {
   display: block;
-  margin: 0 -1em;
+  margin: auto;
   overflow: hidden;
-  padding: 1em 0;
 }
+
 .expanding-grid .links > li {
   box-sizing: border-box;
   float: left;
-  padding: 1em;
+  margin: 2em;
 }
+
 .expanding-grid .links > li a {
   background: orange;
+  height: 150px;
+  width: 200px;
   color: #fff;
   display: block;
   font-size: 2em;
@@ -565,6 +548,18 @@ img.portfolioimg {
   box-shadow: 2px 2px 10px #333333;
 }
 
+/* media queries for fixing the hieght */
+@media all and (max-width: 768px) {
+  img.portfolioimg {
+    width: 275px;
+  }
+}
+
+@media all and (max-width: 468px) {
+  img.portfolioimg {
+    width: 375px;
+  }
+}
 
 
 /* ----------- end of expanding effect --------------------------- */
@@ -574,18 +569,6 @@ div#contactsection {
   padding: 70px 2px;
   background-color: rgba(250, 250, 250, 0.8);
 }
-
-/*div#contactsection form i {
-  color: #ffffff;
-}
-
-div#contactsection form label {
-  color: #555555;
-}
-
-div#contactsection form button {
-  background-color: #ef233c;
-}*/
 
 div#contactsection h4 {
   color: #ef233c;
