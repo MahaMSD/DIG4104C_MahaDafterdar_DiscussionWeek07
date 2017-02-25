@@ -116,15 +116,52 @@
             </div> -->
           <!-- </div> -->
           <!-- testing option 3 -->
-          	<figure>
-          		<svg id="fillgauge1" width="97%" height="250" onclick="gauge1.update(NewValue());"></svg>
-          		<figcaption>HTML</figcaption>
-          	</figure>
-			<svg id="fillgauge2" width="19%" height="200" onclick="gauge2.update(NewValue());"></svg>
-			<svg id="fillgauge3" width="19%" height="200" onclick="gauge3.update(NewValue());"></svg>
-			<svg id="fillgauge4" width="19%" height="200" onclick="gauge4.update(NewValue());"></svg>
-			<svg id="fillgauge5" width="19%" height="200" onclick="gauge5.update(NewValue());"></svg>
-			<svg id="fillgauge6" width="19%" height="200" onclick="gauge6.update(NewValue());"></svg>
+	        <div class="row">
+	          	<div class="col s12 m10 l3  offset-m1">
+	          	<!-- <figure> -->
+	          		<svg id="fillgauge1" width="100%" height="200" onclick="gauge1.update(NewValue());"></svg>
+	          		<h5>HTML</h5>
+	          		<!-- <figcaption>HTML</figcaption>
+	          	</figure> -->
+	          	</div>
+	          	<div class="col s12 m10 l3 offset-l1 offset-m1">
+	          	<!-- <figure> -->
+					<svg id="fillgauge2" width="100%" height="200" onclick="gauge2.update(NewValue());"></svg>
+					<h5>CSS</h5>
+					<!-- <figcaption>CSS</figcaption>
+				</figure> -->
+				</div>
+				<div class="col s12 m10 l3 offset-l1 offset-m1">
+				<!-- <figure> -->
+					<svg id="fillgauge3" width="100%" height="200" onclick="gauge3.update(NewValue());"></svg>
+					<h5>JavaScript/jQuery</h5>
+					<!-- <figcaption>JavaScript/jQuery</figcaption>
+				</figure> -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m10 l3  offset-m1">
+				<!-- <figure> -->
+					<svg id="fillgauge4" width="100%" height="200" onclick="gauge4.update(NewValue());"></svg>
+					<h5>D3.js</h5>
+					<!-- <figcaption>D3.js</figcaption>
+				</figure> -->
+				</div>
+				<div class="col s12 m10 l3 offset-l1 offset-m1">
+				<!-- <figure> -->
+					<svg id="fillgauge5" width="100%" height="200" onclick="gauge5.update(NewValue());"></svg>
+					<h5>PHP</h5>
+					<!-- <figcaption>PHP</figcaption>
+				</figure> -->
+				</div>
+				<div class="col s12 m10 l3 offset-l1 offset-m1">
+				<!-- <figure> -->
+					<svg id="fillgauge6" width="100%" height="200" onclick="gauge6.update(NewValue());"></svg>
+					<h5>MySQL</h5>
+					<!-- <figcaption>MySQL</figcaption>
+				</figure> -->
+				</div>
+			</div>
 
           </div>
         </div>
@@ -210,7 +247,7 @@
 
       });
       // end of jQuery for the scrolling page
-      
+
       //javascript for the d3 ::
        var gauge1 = loadLiquidFillGauge("fillgauge1", 75);
 	    var config1 = liquidFillGaugeDefaultSettings();
