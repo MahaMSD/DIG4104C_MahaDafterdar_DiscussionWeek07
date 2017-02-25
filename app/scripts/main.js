@@ -334,3 +334,233 @@ function writing(text){
 // });
 
  /* -------------------- End of typing effects -------------------------------- */
+/* -------------------- javascript for the d3 animated chart ----------------- */
+
+var width = 440
+var height = 360
+var padding = {
+	'top': 30,
+  	'left': 30,
+  	'bottom': 30,
+  	'right': 30
+}
+
+var svg_node = d3.select('#svg_container').append('svg')
+  				 .attr('width', width + padding.left + padding.right)
+  				 .attr('height', height + padding.top + padding.bottom)
+   				 .attr('calss', 'dbg-vis-border')
+
+var vis = svg_node.append('g')
+  				  .attr('transform', 'translate(' + padding.left + ',' + padding.right + ')')
+
+var demo_data = [
+  {'language': 'HTML', 'Average': '4'}, 
+  {'language': 'CSS', 'Average': '4'}, 
+  {'language': 'JavaScript','Average': '3.6'}, 
+  {'language': 'jQuery','Average': '2.8'}, 
+  {'language': 'D3.js','Average': '0.5'}, 
+  {'language': 'PHP','Average': '1.5'}, 
+  {'language': 'MySQL','Average': '1.3'}
+]
+
+var x_scale = d3.scale.ordinal()
+  					  .domain(demo_data.map(function(d) { return d['language'] }))
+  					  .rangeRoundBands([0, width])
+
+var x_axis = d3.svg.axis().orient('bottom').scale(x_scale)
+  				   .tickSize(3, 2, 0)
+			    vis.append('g').attr('class', 'x-axis').call(x_axis)
+  				   .attr('transform', 'translate(0,' + height + ')')
+
+var y_scale = d3.scale.linear()
+  					  .domain([0, 4])
+  				   	  .range([height, 0])
+
+var y_axis = d3.svg.axis().orient('left').scale(y_scale)
+				vis.append('g').attr('class', 'y-axis').call(y_axis)
+
+var color_scale = d3.scale.category10().domain(x_scale.domain())
+
+var circle_container = vis.append('g').attr('id', 'vis_content')
+
+var groups = circle_container.selectAll('g')
+  			                 .data(demo_data.filter(function(d) {
+	// Try to convert string to int, parseFloat() also works
+	var gpa = +d['Average']
+    // Write filter conditions so that the gpa is a number and in [0, 4]
+    return !isNaN(gpa) && 0 <= gpa && gpa <= 4
+})).enter()
+   .append('g')
+   .attr('transform', function(d) {
+    return 'translate(' + (x_scale(d['language']) + x_scale.rangeBand() / 2 ) + ',0)' 
+})
+groups.append('line')
+  	  .style('stroke-width', 1)
+      .style('stroke', function(d) { return color_scale(d['language']) })
+      .attr('x1', 0).attr('y1', function(d) { return y_scale(d['Average']) })
+      .attr('x2', 0).attr('y2', height)
+
+groups.append('circle')
+      .attr('cx', 0)
+      .attr('cy', function(d) { return y_scale(d['Average']) })
+      .attr('r', 10)
+      .style('fill', function(d) { return color_scale(d['language']) })
+
+groups.append('text')
+      .attr('class', 'value')
+      .attr('x', 0)
+      .attr('y', function(d) { return y_scale(d['Average']) - 15 })
+      .text(function(d) { return (+d['Average']).toFixed(2) })
+
+function filter_selection() {
+	// Getting the value from the <input> with id "cut_off"
+  	// Refer to HTML to find it:)
+  	var lower_limit = d3.select('#cut_off').node().value
+  	// languages to show: increase r for them
+  	var selected = vis.selectAll('circle').filter(function(d) {
+    	return d['Average'] >= lower_limit
+  	})
+  	var notNeeded = vis.selectAll('circle').filter(function(d) {
+        // Reversed condition
+        return d['Average'] < lower_limit
+    })
+  	selected.transition().duration(300)
+    		.delay(function(d, i) { return i * 100 })
+   			.attr('r', 30)
+    		.transition()
+    		.delay(function(d, i) { return i * 100 + 300 })
+    		.attr('cy', function(d) { return y_scale(d['Average']) })
+  	// Animate radius to 0 for those languages
+  	notNeeded.transition()
+    		 .duration(300)
+     		 .attr('cy', height)
+    		 .transition()
+    		 .delay(300)
+    		 .attr('r',0)
+
+  	// Animate lines to grow up from the x-axis
+  	circle_container.selectAll('line').filter(function(d) {
+    	return d['Average'] >= lower_limit
+  	}).transition().duration(300)
+      .delay(function(d, i) { return i * 100 + 300 })
+      .attr('y1', function(d) { return y_scale(d['Average']) })
+  	// Animate lines to shrink down to the x-axis
+  	circle_container.selectAll('line').filter(function(d) {
+    	return d['Average'] < lower_limit
+ 	}).transition().duration(300)
+      .attr('y1', height)
+  
+  	// Animate opacity to 1 for the GPA text needed
+  	circle_container.selectAll('text').filter(function(d) {
+    	return d['Average'] >= lower_limit
+  	}).transition().duration(300)
+      .delay(function(d, i) { return i * 100 + 400 })
+      .attr('y', function(d) { return y_scale(d['Average']) + 5 })
+     .style('opacity', 1)
+  	// Animate on opacity to 0 for the GPA text not needed
+  	circle_container.selectAll('text').filter(function(d) {
+    	return d['Average'] < lower_limit
+  	}).transition().duration(300)
+      .style('opacity', 0)
+}
+
+/* option 02*/
+// var drawn = false; 
+// function makeBars() {
+
+// var data = [
+//       { name: 'HTML', value: 10000 },
+//       { name: 'CSS', value: 9995 },
+//       { name: 'JavaScript', value: 8900 },
+//       { name: 'jQuery', value: 8500 },
+//       { name: 'D3.js', value: 1000 },
+//       { name: 'Node.js', value: 950 },
+//       { name: 'PHP', value: 7500 },
+//       { name: 'MySQL', value: 6500}
+//     ];
+// var maxValue = 10000; 
+
+// var chartHeight = data.length * 50;
+// var chartWidth = 600;
+// var barWidth = 250;
+// var nameWidth = 125;
+
+// var chart = d3.select('#chart-container')
+//               .attr('class', 'horizontal-bar')
+//               .append('svg')
+//               .attr('width', chartWidth)
+//               .attr('height', chartHeight)
+
+
+// chart.selectAll('rect')
+//      .data(data)
+//      .enter()
+//      .append('rect')
+//         .attr('x', nameWidth)
+//         .attr('y', function(d, i) { return i * 50 + 10; })
+//         .attr('width', 0)
+//         .attr('height', 10)     
+//         .attr('rx', 5)
+//         .attr('ry', 5)
+//      .transition()
+//         .duration(600)
+//         .attr('width', function(d) { return (d.value / maxValue) * barWidth; })
+
+// chart.selectAll('text.labels')
+//      .data(data)
+//      .enter()
+//      .append('text')
+//        .attr('x', 0)
+//        .attr('y', function(d, i) { return i * 50 + 20; })
+//        .attr('width', nameWidth)
+//        .attr('height', 15)
+//        .text(function(d) { return d.name });
+
+// chart.selectAll('text.values')
+//      .data(data)
+//      .enter()
+//      .append('text')
+//        .attr('x', nameWidth)
+//        .attr('y', function(d, i) { return (i * 50) + 20; })
+//        .attr('width', 100)
+//        .attr('height', 15)
+//        .text(function(d) { return d3.format(',f')(d.value) })
+//      .transition()
+//        .duration(600)
+//        .attr('x', function(d) { return ((d.value / maxValue) * barWidth ) + nameWidth + 10; })
+
+// }
+
+
+
+// var $animation_elements = $('.animation-element');
+// var $window = $(window);
+
+// function check_if_in_view() {
+//   var window_height = $window.height();
+//   var window_top_position = $window.scrollTop();
+//   var window_bottom_position = (window_top_position + window_height);
+ 
+//   $.each($animation_elements, function() {
+//     var $element = $(this);
+//     var element_height = $element.outerHeight();
+//     var element_top_position = $element.offset().top;
+//     var element_bottom_position = (element_top_position + element_height);
+ 
+//     //check to see if this current container is within viewport
+//     if ((element_bottom_position >= window_top_position) &&
+//         (element_top_position <= window_bottom_position)) {
+//       if (drawn == false) {
+//         $element.addClass('in-view');
+//         makeBars();
+//         drawn = true;
+//       }
+//     } else {
+//       //$element.removeClass('in-view');
+//     }
+//   });
+// }
+
+// $window.on('scroll resize', check_if_in_view);
+// $window.trigger('scroll');
+ /* ------------------ end of javascript for the animated d3 chart ------------- */
