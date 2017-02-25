@@ -590,3 +590,15 @@ div#contactsection p {
 
 
 /* ----------- end of contact section ---------------------------- */
+/* ----------- animation effect ---------------------------------- */
+/* Required */
+.hidden{
+  opacity: 0;
+}
+
+.visible{
+  opacity: 1;
+}
+
+
+/* ----------- end of animation effect --------------------------- */

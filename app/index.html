@@ -361,7 +361,11 @@
         }, firstTimer);
 
         //animate.css effect on d3
-        $('#centerd3').addClass('animated fadeInDown');
+        // $('#centerd3').addClass('animated fadeInDown');
+        $('#centerd3').addClass("hidden").viewportChecker({
+	    	classToAdd: 'visible animated fadeIn', // Class to add to the elements when they are visible
+	    	offset: 400    
+	   });   
 
       });
       // end of jQuery for the scrolling page
