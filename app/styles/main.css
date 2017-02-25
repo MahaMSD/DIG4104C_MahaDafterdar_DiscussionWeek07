@@ -267,16 +267,16 @@ body{
 
 /* ----------- end of typing effect ----------------------- */
 /* ----------- style for the d3 animated chart ------------ */
-label {
+/*label {
   color: #000000;
 }
 
 .t2 { 
     font-size: 150%; 
-}
+}*/
 
 /*float*/
-.fl { 
+/*.fl { 
     float: left; 
 }
 
@@ -367,9 +367,9 @@ text {
 .bold {
   font-weight: bold;
 }
-
+*/
 /* layout stuff */
-.mt1 {
+/*.mt1 {
   margin-top: 25px;
 }
 
@@ -384,7 +384,7 @@ text {
 
 .ml2 {
   margin-left: 40px;
-}
+}*/
 
 
 /* option 2 */
@@ -395,4 +395,11 @@ text {
 .horizontal-bar {
   fill: #2d2d34;
 }*/
+
+
+/* option 03 */
+.liquidFillGaugeText { 
+  font-family: Helvetica; 
+  font-weight: bold; 
+}
 /* ----------- end of style for the animated d3 chart ------------ */
